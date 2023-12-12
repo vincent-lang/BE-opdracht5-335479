@@ -13,4 +13,9 @@ class Magazijn extends Model
         'VerpakkingsEenheid',
         'AantalAanwezig',
     ];
+
+    public function product()
+    {
+        return $this->hasOne(Product::class);
+    }
 }

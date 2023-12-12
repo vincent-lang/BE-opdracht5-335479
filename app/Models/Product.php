@@ -13,4 +13,19 @@ class Product extends Model
         'Naam',
         'Barcode',
     ];
+
+    public function productPerLeverancier()
+    {
+        return $this->belongsTo(ProductPerLeverancier::class);
+    }
+
+    public function productPerAllergeen()
+    {
+        return $this->belongsTo(ProductPerAllergeen::class);
+    }
+
+    public function magazijn()
+    {
+        return $this->belongsTo(Magazijn::class);
+    }
 }

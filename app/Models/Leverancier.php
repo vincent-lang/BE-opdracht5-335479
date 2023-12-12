@@ -15,4 +15,9 @@ class Leverancier extends Model
         'LeverancierNummer',
         'Mobiel',
     ];
+
+    public function productPerLeverancier()
+    {
+        return $this->belongsTo(ProductPerLeverancier::class);
+    }
 }
