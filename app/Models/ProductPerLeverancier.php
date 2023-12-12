@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ProductPerLeverancier extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'DatumLevering',
+        'Aantal',
+        'DatumEerstVolgendeLevering',
+    ];
 }
