@@ -16,7 +16,7 @@ class Leverancier extends Model
         'Mobiel',
     ];
 
-    public function productPerLeverancier()
+    public function productPerLeveranciers()
     {
         return $this->belongsTo(ProductPerLeverancier::class);
     }
