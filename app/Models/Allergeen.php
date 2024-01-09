@@ -14,7 +14,7 @@ class Allergeen extends Model
         'Omschrijving',
     ];
 
-    public function productPerAllergeen()
+    public function productPerAllergeens()
     {
         return $this->belongsTo(productPerAllergeen::class);
     }
