@@ -13,70 +13,70 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_per_allergeens', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('Product_id')->constrained();
-            $table->foreignId('Allergeen_id')->constrained();
+            $table->increments('id');
+            $table->integer('product_id')->constrained()->references('id')->on('products');
+            $table->integer('allergeen_id')->constrained()->references('id')->on('allergeens');
             $table->timestamps();
         });
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 1,
-            'Allergeen_id' => 2,
+            'product_id' => 1,
+            'allergeen_id' => 2,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 1,
-            'Allergeen_id' => 1,
+            'product_id' => 1,
+            'allergeen_id' => 1,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 1,
-            'Allergeen_id' => 3,
+            'product_id' => 1,
+            'allergeen_id' => 3,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 3,
-            'Allergeen_id' => 4,
+            'product_id' => 3,
+            'allergeen_id' => 4,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 6,
-            'Allergeen_id' => 5,
+            'product_id' => 6,
+            'allergeen_id' => 5,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 9,
-            'Allergeen_id' => 2,
+            'product_id' => 9,
+            'allergeen_id' => 2,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 9,
-            'Allergeen_id' => 5,
+            'product_id' => 9,
+            'allergeen_id' => 5,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 10,
-            'Allergeen_id' => 2,
+            'product_id' => 10,
+            'allergeen_id' => 2,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 12,
-            'Allergeen_id' => 4,
+            'product_id' => 12,
+            'allergeen_id' => 4,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 13,
-            'Allergeen_id' => 1,
+            'product_id' => 13,
+            'allergeen_id' => 1,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 13,
-            'Allergeen_id' => 4,
+            'product_id' => 13,
+            'allergeen_id' => 4,
         ]);
 
         DB::table('product_per_allergeens')->insert([
-            'Product_id' => 13,
-            'Allergeen_id' => 5,
+            'product_id' => 13,
+            'allergeen_id' => 5,
         ]);
     }
 

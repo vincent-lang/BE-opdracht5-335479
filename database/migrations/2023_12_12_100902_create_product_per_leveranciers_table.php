@@ -13,149 +13,149 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_per_leveranciers', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('Leverancier_id')->constrained();
-            $table->foreignId('Product_id')->constrained();
-            $table->string('DatumLevering');
-            $table->integer('Aantal');
-            $table->string('DatumEerstVolgendeLevering')->nullable();
+            $table->increments('id');
+            $table->integer('leverancier_id')->constrained()->references('id')->on('leveranciers');
+            $table->integer('product_id')->constrained()->references('id')->on('products');
+            $table->string('datumLevering');
+            $table->integer('aantal');
+            $table->string('datumEerstVolgendeLevering')->nullable();
             $table->timestamps();
         });
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 1,
-            'Product_id' => 1,
-            'DatumLevering' => '2023-04-09',
-            'Aantal' => 23,
-            'DatumEerstVolgendeLevering' => '2023-04-16',
+            'leverancier_id' => 1,
+            'product_id' => 1,
+            'datumLevering' => '2023-04-09',
+            'aantal' => 23,
+            'datumEerstVolgendeLevering' => '2023-04-16',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 1,
-            'Product_id' => 1,
-            'DatumLevering' => '2023-04-18',
-            'Aantal' => 21,
-            'DatumEerstVolgendeLevering' => '2023-04-25',
+            'leverancier_id' => 1,
+            'product_id' => 1,
+            'datumLevering' => '2023-04-18',
+            'aantal' => 21,
+            'datumEerstVolgendeLevering' => '2023-04-25',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 1,
-            'Product_id' => 2,
-            'DatumLevering' => '2023-04-09',
-            'Aantal' => 12,
-            'DatumEerstVolgendeLevering' => '2023-04-16',
+            'leverancier_id' => 1,
+            'product_id' => 2,
+            'datumLevering' => '2023-04-09',
+            'aantal' => 12,
+            'datumEerstVolgendeLevering' => '2023-04-16',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 1,
-            'Product_id' => 3,
-            'DatumLevering' => '2023-04-10',
-            'Aantal' => 11,
-            'DatumEerstVolgendeLevering' => '2023-04-17',
+            'leverancier_id' => 1,
+            'product_id' => 3,
+            'datumLevering' => '2023-04-10',
+            'aantal' => 11,
+            'datumEerstVolgendeLevering' => '2023-04-17',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 2,
-            'Product_id' => 4,
-            'DatumLevering' => '2023-04-14',
-            'Aantal' => 16,
-            'DatumEerstVolgendeLevering' => '2023-04-21',
+            'leverancier_id' => 2,
+            'product_id' => 4,
+            'datumLevering' => '2023-04-14',
+            'aantal' => 16,
+            'datumEerstVolgendeLevering' => '2023-04-21',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 2,
-            'Product_id' => 4,
-            'DatumLevering' => '2023-04-21',
-            'Aantal' => 23,
-            'DatumEerstVolgendeLevering' => '2023-04-28',
+            'leverancier_id' => 2,
+            'product_id' => 4,
+            'datumLevering' => '2023-04-21',
+            'aantal' => 23,
+            'datumEerstVolgendeLevering' => '2023-04-28',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 2,
-            'Product_id' => 5,
-            'DatumLevering' => '2023-04-14',
-            'Aantal' => 45,
-            'DatumEerstVolgendeLevering' => '2023-04-21',
+            'leverancier_id' => 2,
+            'product_id' => 5,
+            'datumLevering' => '2023-04-14',
+            'aantal' => 45,
+            'datumEerstVolgendeLevering' => '2023-04-21',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 2,
-            'Product_id' => 6,
-            'DatumLevering' => '2023-04-14',
-            'Aantal' => 30,
-            'DatumEerstVolgendeLevering' => '2023-04-21',
+            'leverancier_id' => 2,
+            'product_id' => 6,
+            'datumLevering' => '2023-04-14',
+            'aantal' => 30,
+            'datumEerstVolgendeLevering' => '2023-04-21',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 3,
-            'Product_id' => 7,
-            'DatumLevering' => '2023-04-12',
-            'Aantal' => 12,
-            'DatumEerstVolgendeLevering' => '2023-04-19',
+            'leverancier_id' => 3,
+            'product_id' => 7,
+            'datumLevering' => '2023-04-12',
+            'aantal' => 12,
+            'datumEerstVolgendeLevering' => '2023-04-19',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 3,
-            'Product_id' => 7,
-            'DatumLevering' => '2023-04-19',
-            'Aantal' => 23,
-            'DatumEerstVolgendeLevering' => '2023-04-26',
+            'leverancier_id' => 3,
+            'product_id' => 7,
+            'datumLevering' => '2023-04-19',
+            'aantal' => 23,
+            'datumEerstVolgendeLevering' => '2023-04-26',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 3,
-            'Product_id' => 8,
-            'DatumLevering' => '2023-04-10',
-            'Aantal' => 12,
-            'DatumEerstVolgendeLevering' => '2023-04-17',
+            'leverancier_id' => 3,
+            'product_id' => 8,
+            'datumLevering' => '2023-04-10',
+            'aantal' => 12,
+            'datumEerstVolgendeLevering' => '2023-04-17',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 3,
-            'Product_id' => 9,
-            'DatumLevering' => '2023-04-11',
-            'Aantal' => 1,
-            'DatumEerstVolgendeLevering' => '2023-04-18',
+            'leverancier_id' => 3,
+            'product_id' => 9,
+            'datumLevering' => '2023-04-11',
+            'aantal' => 1,
+            'datumEerstVolgendeLevering' => '2023-04-18',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 4,
-            'Product_id' => 10,
-            'DatumLevering' => '2023-04-16',
-            'Aantal' => 24,
-            'DatumEerstVolgendeLevering' => '2023-04-30',
+            'leverancier_id' => 4,
+            'product_id' => 10,
+            'datumLevering' => '2023-04-16',
+            'aantal' => 24,
+            'datumEerstVolgendeLevering' => '2023-04-30',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 5,
-            'Product_id' => 11,
-            'DatumLevering' => '2023-04-10',
-            'Aantal' => 47,
-            'DatumEerstVolgendeLevering' => '2023-04-17',
+            'leverancier_id' => 5,
+            'product_id' => 11,
+            'datumLevering' => '2023-04-10',
+            'aantal' => 47,
+            'datumEerstVolgendeLevering' => '2023-04-17',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 5,
-            'Product_id' => 11,
-            'DatumLevering' => '2023-04-19',
-            'Aantal' => 60,
-            'DatumEerstVolgendeLevering' => '2023-04-26',
+            'leverancier_id' => 5,
+            'product_id' => 11,
+            'datumLevering' => '2023-04-19',
+            'aantal' => 60,
+            'datumEerstVolgendeLevering' => '2023-04-26',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 5,
-            'Product_id' => 12,
-            'DatumLevering' => '2023-04-11',
-            'Aantal' => 45,
-            'DatumEerstVolgendeLevering' => '',
+            'leverancier_id' => 5,
+            'product_id' => 12,
+            'datumLevering' => '2023-04-11',
+            'aantal' => 45,
+            'datumEerstVolgendeLevering' => '',
         ]);
 
         DB::table('product_per_leveranciers')->insert([
-            'Leverancier_id' => 5,
-            'Product_id' => 13,
-            'DatumLevering' => '2023-04-12',
-            'Aantal' => 23,
-            'DatumEerstVolgendeLevering' => '',
+            'leverancier_id' => 5,
+            'product_id' => 13,
+            'datumLevering' => '2023-04-12',
+            'aantal' => 23,
+            'datumEerstVolgendeLevering' => '',
         ]);
     }
 

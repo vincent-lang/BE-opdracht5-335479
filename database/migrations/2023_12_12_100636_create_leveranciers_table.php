@@ -13,47 +13,47 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('leveranciers', function (Blueprint $table) {
-            $table->id();
-            $table->string('Naam');
-            $table->string('ContactPersoon');
-            $table->string('LeverancierNummer');
-            $table->string('Mobiel');
+            $table->increments('id');
+            $table->string('naam');
+            $table->string('contactPersoon');
+            $table->string('leverancierNummer');
+            $table->string('mobiel');
             $table->timestamps();
         });
 
         DB::table('leveranciers')->insert([
-            'Naam' => 'Venco',
-            'ContactPersoon' => 'Bert van Linge',
-            'LeverancierNummer' => 'L1029384719',
-            'Mobiel' => '06-28493827',
+            'naam' => 'Venco',
+            'contactPersoon' => 'Bert van Linge',
+            'leverancierNummer' => 'L1029384719',
+            'mobiel' => '06-28493827',
         ]);
 
         DB::table('leveranciers')->insert([
-            'Naam' => 'Astra Sweets',
-            'ContactPersoon' => 'Jasper Del Monte',
-            'LeverancierNummer' => 'L1029284315',
-            'Mobiel' => '06-39398734',
+            'naam' => 'Astra Sweets',
+            'contactPersoon' => 'Jasper Del Monte',
+            'leverancierNummer' => 'L1029284315',
+            'mobiel' => '06-39398734',
         ]);
 
         DB::table('leveranciers')->insert([
-            'Naam' => 'Haribo',
-            'ContactPersoon' => 'Sven Stalman',
-            'LeverancierNummer' => 'L1029324748',
-            'Mobiel' => '06-24383291',
+            'naam' => 'Haribo',
+            'contactPersoon' => 'Sven Stalman',
+            'leverancierNummer' => 'L1029324748',
+            'mobiel' => '06-24383291',
         ]);
 
         DB::table('leveranciers')->insert([
-            'Naam' => 'Basset',
-            'ContactPersoon' => 'Joyce Stelterberg',
-            'LeverancierNummer' => 'L1023845773',
-            'Mobiel' => '06-48293823',
+            'naam' => 'Basset',
+            'contactPersoon' => 'Joyce Stelterberg',
+            'leverancierNummer' => 'L1023845773',
+            'mobiel' => '06-48293823',
         ]);
 
         DB::table('leveranciers')->insert([
-            'Naam' => 'De Bron',
-            'ContactPersoon' => 'Remco Veenstra',
-            'LeverancierNummer' => 'L1023857736',
-            'Mobiel' => '06-34291234',
+            'naam' => 'De Bron',
+            'contactPersoon' => 'Remco Veenstra',
+            'leverancierNummer' => 'L1023857736',
+            'mobiel' => '06-34291234',
         ]);
     }
 

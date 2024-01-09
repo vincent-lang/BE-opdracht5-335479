@@ -13,34 +13,34 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('allergeens', function (Blueprint $table) {
-            $table->id();
-            $table->string('Naam');
-            $table->string('Omschrijving');
+            $table->increments('id');
+            $table->string('naam');
+            $table->string('omschrijving');
             $table->timestamps();
         });
 
         DB::table('allergeens')->insert([
-            'Naam' => 'Gluten',
+            'naam' => 'Gluten',
             'Omschrijving' => 'Dit product bevat gluten',
         ]);
 
         DB::table('allergeens')->insert([
-            'Naam' => 'Gelatine',
+            'naam' => 'Gelatine',
             'Omschrijving' => 'Dit product bevat gelatine',
         ]);
 
         DB::table('allergeens')->insert([
-            'Naam' => 'AZO-Kleurstof',
+            'naam' => 'AZO-Kleurstof',
             'Omschrijving' => 'Dit product bevat AZO-kleurstoffen',
         ]);
 
         DB::table('allergeens')->insert([
-            'Naam' => 'Lactose',
+            'naam' => 'Lactose',
             'Omschrijving' => 'Dit product bevat lactose',
         ]);
 
         DB::table('allergeens')->insert([
-            'Naam' => 'Soja',
+            'naam' => 'Soja',
             'Omschrijving' => 'Dit product bevat soja',
         ]);
     }

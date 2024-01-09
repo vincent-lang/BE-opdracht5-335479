@@ -13,89 +13,89 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('magazijns', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('Product_id')->constrained();
-            $table->string('VerpakkingsEenheid');
-            $table->string('AantalAanwezig')->nullable();
+            $table->increments('id');
+            $table->integer('product_id')->references('id')->on('products');
+            $table->string('verpakkingsEenheid');
+            $table->string('aantalAanwezig')->nullable();
             $table->timestamps();
         });
 
         DB::table('magazijns')->insert([
-            'Product_id' => 1,
-            'VerpakkingsEenheid' => '5',
-            'AantalAanwezig' => '453',
+            'product_id' => 1,
+            'verpakkingsEenheid' => '5',
+            'aantalAanwezig' => '453',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 2,
-            'VerpakkingsEenheid' => '2,5',
-            'AantalAanwezig' => '400',
+            'product_id' => 2,
+            'verpakkingsEenheid' => '2,5',
+            'aantalAanwezig' => '400',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 3,
-            'VerpakkingsEenheid' => '5',
-            'AantalAanwezig' => '1',
+            'product_id' => 3,
+            'verpakkingsEenheid' => '5',
+            'aantalAanwezig' => '1',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 4,
-            'VerpakkingsEenheid' => '1',
-            'AantalAanwezig' => '800',
+            'product_id' => 4,
+            'verpakkingsEenheid' => '1',
+            'aantalAanwezig' => '800',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 5,
-            'VerpakkingsEenheid' => '3',
-            'AantalAanwezig' => '234',
+            'product_id' => 5,
+            'verpakkingsEenheid' => '3',
+            'aantalAanwezig' => '234',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 6,
-            'VerpakkingsEenheid' => '2',
-            'AantalAanwezig' => '345',
+            'product_id' => 6,
+            'verpakkingsEenheid' => '2',
+            'aantalAanwezig' => '345',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 7,
-            'VerpakkingsEenheid' => '1',
-            'AantalAanwezig' => '795',
+            'product_id' => 7,
+            'verpakkingsEenheid' => '1',
+            'aantalAanwezig' => '795',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 8,
-            'VerpakkingsEenheid' => '10',
-            'AantalAanwezig' => '233',
+            'product_id' => 8,
+            'verpakkingsEenheid' => '10',
+            'aantalAanwezig' => '233',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 9,
-            'VerpakkingsEenheid' => '2,5',
-            'AantalAanwezig' => '123',
+            'product_id' => 9,
+            'verpakkingsEenheid' => '2,5',
+            'aantalAanwezig' => '123',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 10,
-            'VerpakkingsEenheid' => '3',
-            'AantalAanwezig' => '',
+            'product_id' => 10,
+            'verpakkingsEenheid' => '3',
+            'aantalAanwezig' => '',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 11,
-            'VerpakkingsEenheid' => '2',
-            'AantalAanwezig' => '367',
+            'product_id' => 11,
+            'verpakkingsEenheid' => '2',
+            'aantalAanwezig' => '367',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 12,
-            'VerpakkingsEenheid' => '1',
-            'AantalAanwezig' => '467',
+            'product_id' => 12,
+            'verpakkingsEenheid' => '1',
+            'aantalAanwezig' => '467',
         ]);
 
         DB::table('magazijns')->insert([
-            'Product_id' => 13,
-            'VerpakkingsEenheid' => '5',
-            'AantalAanwezig' => '20',
+            'product_id' => 13,
+            'verpakkingsEenheid' => '5',
+            'aantalAanwezig' => '20',
         ]);
     }
 
