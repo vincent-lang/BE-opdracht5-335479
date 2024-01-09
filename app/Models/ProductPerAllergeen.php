@@ -9,12 +9,12 @@ class ProductPerAllergeen extends Model
 {
     use HasFactory;
 
-    public function product()
+    public function products()
     {
         return $this->hasMany(Product::class);
     }
 
-    public function allergeen()
+    public function allergeens()
     {
         return $this->hasMany(Allergeen::class);
     }
