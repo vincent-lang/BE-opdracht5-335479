@@ -15,12 +15,12 @@ class ProductPerLeverancier extends Model
         'DatumEerstVolgendeLevering',
     ];
 
-    public function leverancier()
+    public function leveranciers()
     {
         return $this->hasMany(Leverancier::class);
     }
 
-    public function product()
+    public function products()
     {
         return $this->hasMany(Product::class);
     }
