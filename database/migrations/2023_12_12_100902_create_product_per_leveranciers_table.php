@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -12,13 +13,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        $time = Carbon::now()->tz('GMT+1');
+
         Schema::create('product_per_leveranciers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('leverancier_id')->constrained()->references('id')->on('leveranciers');
-            $table->integer('product_id')->constrained()->references('id')->on('products');
-            $table->string('datumLevering');
+            $table->id('id');
+            $table->foreignId('leverancier_id')->references('id')->on('leveranciers');
+            $table->foreignId('product_id')->references('id')->on('products');
+            $table->string('datumLevering', 50);
             $table->integer('aantal');
-            $table->string('datumEerstVolgendeLevering')->nullable();
+            $table->string('datumEerstVolgendeLevering', 25)->nullable();
+            $table->boolean('IsActief');
+            $table->string('Opmerking', 250)->nullable();
             $table->timestamps();
         });
 
@@ -28,6 +33,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-09',
             'aantal' => 23,
             'datumEerstVolgendeLevering' => '2023-04-16',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -36,6 +44,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-18',
             'aantal' => 21,
             'datumEerstVolgendeLevering' => '2023-04-25',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -44,6 +55,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-09',
             'aantal' => 12,
             'datumEerstVolgendeLevering' => '2023-04-16',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -52,6 +66,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-10',
             'aantal' => 11,
             'datumEerstVolgendeLevering' => '2023-04-17',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -60,6 +77,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-14',
             'aantal' => 16,
             'datumEerstVolgendeLevering' => '2023-04-21',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -68,6 +88,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-21',
             'aantal' => 23,
             'datumEerstVolgendeLevering' => '2023-04-28',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -76,6 +99,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-14',
             'aantal' => 45,
             'datumEerstVolgendeLevering' => '2023-04-21',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -84,6 +110,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-14',
             'aantal' => 30,
             'datumEerstVolgendeLevering' => '2023-04-21',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -92,6 +121,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-12',
             'aantal' => 12,
             'datumEerstVolgendeLevering' => '2023-04-19',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -100,6 +132,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-19',
             'aantal' => 23,
             'datumEerstVolgendeLevering' => '2023-04-26',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -108,6 +143,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-10',
             'aantal' => 12,
             'datumEerstVolgendeLevering' => '2023-04-17',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -116,6 +154,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-11',
             'aantal' => 1,
             'datumEerstVolgendeLevering' => '2023-04-18',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -124,6 +165,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-16',
             'aantal' => 24,
             'datumEerstVolgendeLevering' => '2023-04-30',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -132,6 +176,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-10',
             'aantal' => 47,
             'datumEerstVolgendeLevering' => '2023-04-17',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -140,6 +187,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-19',
             'aantal' => 60,
             'datumEerstVolgendeLevering' => '2023-04-26',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -148,6 +198,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-11',
             'aantal' => 45,
             'datumEerstVolgendeLevering' => '',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
 
         DB::table('product_per_leveranciers')->insert([
@@ -156,6 +209,9 @@ return new class extends Migration
             'datumLevering' => '2023-04-12',
             'aantal' => 23,
             'datumEerstVolgendeLevering' => '',
+            'IsActief' => 1,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
     }
 

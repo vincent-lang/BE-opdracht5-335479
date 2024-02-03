@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductPerAllergeen extends Model
 {
     use HasFactory;
 
-    public function products()
+    public function product(): BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 
-    public function allergeens()
+    public function allergeen(): BelongsTo
     {
-        return $this->hasMany(Allergeen::class);
+        return $this->belongsTo(Allergeen::class);
     }
 }

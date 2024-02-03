@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Allergeen extends Model
 {
@@ -14,8 +15,8 @@ class Allergeen extends Model
         'Omschrijving',
     ];
 
-    public function productPerAllergeens()
+    public function productPerAllergeens(): HasMany
     {
-        return $this->belongsTo(productPerAllergeen::class);
+        return $this->hasMany(productPerAllergeen::class);
     }
 }

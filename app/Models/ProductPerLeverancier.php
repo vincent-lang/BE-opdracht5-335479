@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductPerLeverancier extends Model
 {
@@ -15,13 +16,13 @@ class ProductPerLeverancier extends Model
         'DatumEerstVolgendeLevering',
     ];
 
-    public function leveranciers()
+    public function leverancier(): BelongsTo
     {
-        return $this->hasMany(Leverancier::class);
+        return $this->belongsTo(Leverancier::class);
     }
 
-    public function products()
+    public function product(): BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }

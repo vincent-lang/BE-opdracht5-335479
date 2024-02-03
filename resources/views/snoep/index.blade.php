@@ -43,8 +43,8 @@
                     <td>{{$data->product->naam}}</td>
                     <td>{{$data->verpakkingsEenheid}}</td>
                     <td>{{$data->aantalAanwezig}}</td>
-                    <td></td>
-                    <td></td>
+                    <td><a href="{{route('snoep.allergeenIndex', [$data->id])}}"><img class="small-img" src="/img/kruisje.png" alt="kruisje.png"></a></td>
+                    <td><a href="{{route('snoep.leverancierIndex', [$data->id])}}"><img class="small-img" src="/img/vraagteken.png" alt="vraagteken.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>

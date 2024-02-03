@@ -96,7 +96,7 @@ div.background span:nth-child(10) {
     }
 }
 
-div.table, div.title {
+div.table, div.title, div.contact {
     margin-top: 1rem;
     margin-left: 1rem;
 }
@@ -112,4 +112,17 @@ table, th, td {
 
 th {
     padding: 0.5rem;
+}
+
+span.contact-data {
+    font-weight: normal;
+}
+
+div.contact>h3 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+img.small-img {
+    width: 10%;
 }

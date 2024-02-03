@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Leverancier extends Model
 {
@@ -16,8 +17,8 @@ class Leverancier extends Model
         'Mobiel',
     ];
 
-    public function productPerLeveranciers()
+    public function productPerLeveranciers(): HasMany
     {
-        return $this->belongsTo(ProductPerLeverancier::class);
+        return $this->hasMany(ProductPerLeverancier::class);
     }
 }

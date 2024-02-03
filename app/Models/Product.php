@@ -15,14 +15,14 @@ class Product extends Model
         'Barcode',
     ];
 
-    public function productPerLeveranciers()
+    public function productPerLeveranciers(): HasMany
     {
-        return $this->belongsTo(ProductPerLeverancier::class);
+        return $this->hasMany(ProductPerLeverancier::class);
     }
 
-    public function productPerAllergeens()
+    public function productPerAllergeens(): HasMany
     {
-        return $this->belongsTo(ProductPerAllergeen::class);
+        return $this->hasMany(ProductPerAllergeen::class);
     }
 
     public function magazijns(): HasMany

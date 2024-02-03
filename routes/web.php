@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GegevensController::class, 'index'])->name('snoep.index');
+
+Route::get('/leverancier/index/{data}', [GegevensController::class, 'LeverancierIndex'])->name('snoep.leverancierIndex');
+
+Route::get('/allergeen/index/{data}', [GegevensController::class, 'AllergeenIndex'])->name('snoep.allergeenIndex');
