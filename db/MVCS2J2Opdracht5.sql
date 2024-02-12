@@ -19,7 +19,28 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `MVCS2J2Opdracht5`
+
+use MVCS2J2Opdracht5;
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `product_per_allergeens`
+--
+
+DROP TABLE IF EXISTS `product_per_allergeens`;
+CREATE TABLE IF NOT EXISTS `product_per_allergeens` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `allergeen_id` int(11) NOT NULL,
+  `IsActief` tinyint(1) NOT NULL,
+  `Opmerking` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- --------------------------------------------------------
 
@@ -49,6 +70,27 @@ INSERT INTO `allergeens` (`id`, `naam`, `omschrijving`, `IsActief`, `Opmerking`,
 (3, 'AZO-Kleurstof', 'Dit product bevat AZO-kleurstoffen', 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58'),
 (4, 'Lactose', 'Dit product bevat lactose', 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58'),
 (5, 'Soja', 'Dit product bevat soja', 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `product_per_leveranciers`
+--
+
+DROP TABLE IF EXISTS `product_per_leveranciers`;
+CREATE TABLE IF NOT EXISTS `product_per_leveranciers` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `leverancier_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `datumLevering` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `aantal` int(11) NOT NULL,
+  `datumEerstVolgendeLevering` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `IsActief` tinyint(1) NOT NULL,
+  `Opmerking` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -206,24 +248,6 @@ INSERT INTO `products` (`id`, `naam`, `barcode`, `IsActief`, `Opmerking`, `creat
 (12, 'Kruis Drop', '8719587322265', 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58'),
 (13, 'Zoute Ruitjes', '8719587323256', 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58');
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `product_per_allergeens`
---
-
-DROP TABLE IF EXISTS `product_per_allergeens`;
-CREATE TABLE IF NOT EXISTS `product_per_allergeens` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) NOT NULL,
-  `allergeen_id` int(11) NOT NULL,
-  `IsActief` tinyint(1) NOT NULL,
-  `Opmerking` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 --
 -- Gegevens worden geëxporteerd voor tabel `product_per_allergeens`
 --
@@ -241,27 +265,6 @@ INSERT INTO `product_per_allergeens` (`id`, `product_id`, `allergeen_id`, `IsAct
 (10, 13, 1, 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58'),
 (11, 13, 4, 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58'),
 (12, 13, 5, 1, NULL, '2024-01-29 10:16:58', '2024-01-29 10:16:58');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `product_per_leveranciers`
---
-
-DROP TABLE IF EXISTS `product_per_leveranciers`;
-CREATE TABLE IF NOT EXISTS `product_per_leveranciers` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `leverancier_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `datumLevering` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `aantal` int(11) NOT NULL,
-  `datumEerstVolgendeLevering` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `IsActief` tinyint(1) NOT NULL,
-  `Opmerking` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `product_per_leveranciers`
